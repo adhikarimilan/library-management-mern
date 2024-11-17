@@ -50,6 +50,7 @@ const EditBook = () => {
         setResp(response.data);
         setLoading(false);
         setCreated(true);
+        navigate(`../books/show/${id}`);
       })
       .catch((error) => {
         console.error(`An error Occured: ${error}`);

@@ -4,6 +4,10 @@ import Spinner from "../assets/components/Spinner";
 import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 
+import { ToastContainer, toast } from "react-toastify";
+
+import "react-toastify/dist/ReactToastify.css";
+
 const DeleteBook = () => {
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
@@ -15,6 +19,8 @@ const DeleteBook = () => {
       .delete(`http://localhost:5555/books/${id}`)
       .then((response) => {
         console.log(response.data);
+        toast.success("Book Deleted Successfully!");
+        navigate("/");
         setLoading(false);
       })
       .catch((error) => {

@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 
 import { AiOutlineEdit } from "react-icons/ai";
 import { BsInfoCircle } from "react-icons/bs";
+import { BiShow } from "react-icons/bi";
+import BookModal from "./BookModal";
 
 import { Link } from "react-router-dom";
 import { MdOutlineDelete } from "react-icons/md";

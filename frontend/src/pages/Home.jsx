@@ -5,6 +5,9 @@ import { Link } from "react-router-dom";
 import { MdOutlineAddBox } from "react-icons/md";
 import BooksTable from "../assets/components/homepage/BooksTable";
 import BookCard from "../assets/components/homepage/BookCard";
+import { ToastContainer, toast } from "react-toastify";
+
+import "react-toastify/dist/ReactToastify.css";
 
 const Home = () => {
   const [books, setBooks] = useState([]);
@@ -34,6 +37,7 @@ const Home = () => {
   //   }, [books]); // Runs every time `books` changes
   return (
     <div className="p-4">
+      <ToastContainer />
       <div className="flex justify-center items-center gap-x-4">
         <button
           className={

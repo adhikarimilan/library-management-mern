@@ -5,6 +5,10 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 
+import { ToastContainer, toast } from "react-toastify";
+
+import "react-toastify/dist/ReactToastify.css";
+
 const CreateBook = () => {
   const [title, setTitle] = useState("");
   const [author, setAuthor] = useState("");
@@ -16,7 +20,7 @@ const CreateBook = () => {
 
   const handleSaveBook = async () => {
     if (!title || !author || !publishYear) {
-      alert("Plese fill the title, author and publish year properly");
+      toast.error("Plese fill the title, author and publish year properly");
       return;
     }
     const data = {
@@ -42,6 +46,7 @@ const CreateBook = () => {
   return (
     <div className="p-4">
       <BackButton />
+      <ToastContainer />
       <h1 className="text-3xl my-4">Create a new Book</h1>
       {loading ? (
         <Spinner />
